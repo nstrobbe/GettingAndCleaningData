@@ -51,12 +51,6 @@ nrows.to.run <- 10
 ## Function to read and process the main datasets
 ## Takes either "train" or "test" as input
 my.process.df <- function(datatype="train"){
-  # Read the data and assign proper column names
-  tmp.df <- read.table(paste(base.dir,datatype,"/X_",datatype,".txt",sep="")
-                       , quote = ""
-                       , nrows = nrows.to.run
-                       , col.names = features.names[[1]])
-  
   # Read the subject id file
   # Make the id's into a factor variable, will be useful later
   subjects <- read.table(paste(base.dir,datatype,"/subject_",datatype,".txt", sep="")
@@ -71,13 +65,18 @@ my.process.df <- function(datatype="train"){
                          , col.names = "Activity") %>%
     mutate(Activity=activity.factor[Activity])
   
+  # Read the data and assign proper column names.
   # Select only the columns corresponding to the mean() and std() 
   # of the variables. 
-  # Add the subject id and the activity information
-  new.df <- select(tmp.df
-                   , contains("mean", ignore.case=FALSE)
-                   , contains("std")
-                   , -contains("meanFreq")) %>%
+  # Add the subject id and the activity information columns. 
+  my.df <- read.table(paste(base.dir,datatype,"/X_",datatype,".txt",sep="")
+                       , quote = ""
+                       , nrows = nrows.to.run
+                       , colClasses = "numeric"
+                       , col.names = features.names[[1]]) %>%
+    select(contains("mean", ignore.case=FALSE)
+           , contains("std")
+           , -contains("meanFreq")) %>%
     cbind(subjects) %>%
     cbind(activity) 
   
