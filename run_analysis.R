@@ -112,8 +112,7 @@ my.rename <- function(x){
 ## Rename the features to more readable names using the above defined function.
 ## Arrange the rows by Subject.ID and Activity to make possible subsequent 
 ## steps, such as plotting, easier. 
-tidy.df <- melt(full.df
-                  , id.vars = c("Subject.ID", "Activity")) %>%
+tidy.df <- melt(full.df, id.vars = c("Subject.ID", "Activity")) %>%
   dcast(Subject.ID + Activity ~ variable, mean) %>%
   select_(.dots = setNames(names(full.df)
                            , my.rename(names(full.df))
