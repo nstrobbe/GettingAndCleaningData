@@ -104,7 +104,8 @@ rm(test.X)
 ## in the names. 
 my.rename <- function(x){
   temp.x <- gsub("...",".",x,fixed=TRUE)
-  gsub("..","",temp.x,fixed=TRUE)
+  temp.x <- gsub("..","",temp.x,fixed=TRUE)
+  gsub("BodyBody","Body",temp.x,fixed=TRUE)
 }
 
 ## Melt the dataset and then do a dcast.
@@ -125,9 +126,9 @@ tidy.df <- melt(full.df, id.vars = c("Subject.ID", "Activity")) %>%
 tidy.df <- select_(tidy.df
                    , .dots = c("Subject.ID"
                                , "Activity"
-                               , sort(names(tidy.df)[3:68])
-                               )
+                               , sort(names(tidy.df)[! names(tidy.df) %in% c("Subject.ID","Activity")] )
                    )
+                  )
 
 ## Now we have our tidy dataset in a wide format. 
 ## The columns are Subject.ID, Activity, and the average for each feature. 
