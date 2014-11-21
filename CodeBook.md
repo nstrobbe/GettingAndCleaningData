@@ -36,7 +36,7 @@ original variable names have been cleaned up.
 We computed the mean of each selected variable, for each subject and
 activity combination. This information constitutes the final tidy dataset with
 which we can do more analysis later on. The dataset was also sorted by subject 
-id and acitivy, and the columns are arranged in alphabetical order. 
+id and activity, and the columns are arranged in alphabetical order. 
 
 ### Structure of the final dataset
 
