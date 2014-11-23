@@ -4,7 +4,7 @@ CodeBook for tidy_dataset.txt
 Note: this codebook is best viewed on github, or somewhere else where the 
 markdown is properly read in. 
 
-### Introduction
+## Introduction
 
 The input data for this study is the "Human Activity Recognition Using Smartphones"
 dataset, which can be found on the UCI Machine Learning web page: 
@@ -16,7 +16,7 @@ to arrive at the tidy dataset that is stored in the `tidy_dataset.txt` file
 to which this CodeBook belongs. The structure of the tidy dataset and the meaning 
 of all variable names is also included. 
 
-### Data manipulations
+## Data manipulations
 
 Several actions were performed on the original dataset. 
 
@@ -38,7 +38,7 @@ activity combination. This information constitutes the final tidy dataset with
 which we can do more analysis later on. The dataset was also sorted by subject 
 id and activity, and the columns are arranged in alphabetical order. 
 
-### Structure of the final dataset
+## Structure of the final dataset
 
 The final dataset contains 180 rows of observations, and 68 columns. 
 The first column is an id number associated to a given subject, 
@@ -48,7 +48,7 @@ length of time that the subject was performing a certain activity. The variables
 corresponding to these 66 columns are normalized to be in the range [-1,1].
 
 
-### List of all variables in the dataset
+## List of all variables in the dataset
 
 ### Naming convention
 
