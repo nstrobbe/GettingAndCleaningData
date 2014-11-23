@@ -44,9 +44,13 @@ The final dataset contains 180 rows of observations, and 68 columns.
 The first column is an id number associated to a given subject, 
 the second column contains the activity that the subject was performing, and the 
 remaining 66 columns contain the mean of various measurements, computed over the 
-length of time that the subject was performing a certain activity. 
+length of time that the subject was performing a certain activity. The variables 
+corresponding to these 66 columns are normalized to be in the range [-1,1].
+
 
 ### List of all variables in the dataset
+
+### Naming convention
 
 Variables 3-68 follow a specific naming convention. This allows for concise
 variable names that still incode all relevant information, and are readable. 
@@ -61,9 +65,10 @@ measured signal is reported. These are computed over one timing(frequency) windo
 
 On top of this there can be a *X*, *Y* or *Z* appended to indicate components 
 along the X, Y or Z direction for the 3-axial variables. 
-
 For clarity there is a **.** between parts 2 and 3, and parts 3 and 4 in the 
 variable names. 
+
+### Full list
 
 1. **Subject.ID**  
 Identification number of the subject, ranges from 1 to 30.
